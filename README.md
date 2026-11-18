@@ -4,6 +4,19 @@ Connect an agent to live hotel quotes, let a traveler approve a room, and create
 
 [Get a free key](https://elitetravelsales.com/tokens?utm_source=github&utm_medium=referral&utm_campaign=github-2026-11) · [Quickstart](https://elitetravelsales.com/hotel-booking-mcp?utm_source=github&utm_medium=referral&utm_campaign=github-2026-11) · [Client setup](https://elitetravelsales.com/tokens/setup)
 
+Platforms can request a free key from `POST https://elitetravelsales.com/api/backend/agent-subscriptions/free-key`. Supply your operator email and optional organization. This body also records that an agent requested the key through this example.
+
+```json
+{
+  "email": "operator@example.com",
+  "organization": "Your agent platform",
+  "requestedBy": "automation",
+  "acquisitionCampaign": "github-2026-11"
+}
+```
+
+The response contains a token shown once. Store it in your secret manager before making requests.
+
 ## Request your first quote
 
 Use Python 3.9 or newer. Save the key in your environment as `TRAVASO_AGENT_TOKEN` through your terminal or secret manager. Keep it out of chat, source control, and screenshots.
