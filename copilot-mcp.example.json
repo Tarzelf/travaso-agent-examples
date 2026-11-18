@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "travaso": {
+      "type": "http",
+      "url": "https://elitetravelsales.com/api/backend/mcp",
+      "headers": {
+        "Authorization": "Bearer ${TRAVASO_AGENT_TOKEN}"
+      },
+      "tools": ["*"]
+    }
+  }
+}

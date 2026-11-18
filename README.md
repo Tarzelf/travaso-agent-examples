@@ -17,6 +17,21 @@ Platforms can request a free key from `POST https://elitetravelsales.com/api/bac
 
 The response contains a token shown once. Store it in your secret manager before making requests.
 
+## Install the booking skill
+
+From the project where your agent runs, install the booking instructions for Codex:
+
+```sh
+npx skills@1.9.0 add Tarzelf/travaso-agent-examples \
+  --skill travaso-hotel-booking --agent codex
+```
+
+This project-scoped command requires Node.js 22.20 or newer. Replace `codex` with `claude-code`, `cursor`, or `github-copilot` for those clients. Omit `--agent` to choose a supported client. The [official skills CLI](https://github.com/vercel-labs/skills#install-a-skill) documents installation and updates.
+
+If you need a key, [activate a free integration](https://elitetravelsales.com/tokens?utm_source=skills&utm_medium=integration&utm_campaign=skills-2026-11) before connecting your client. Existing keys work with the skill.
+
+The skill supplies the booking workflow. Connect the remote MCP server and provide your key using the client configuration below to make its tools available. Start a new agent session after setup, then ask it to use the `travaso-hotel-booking` skill for your trip. Confirm that it calls `search_competitive_hotel_quotes` and returns real options before requesting checkout.
+
 ## Request your first quote
 
 Use Python 3.9 or newer. Save the key in your environment as `TRAVASO_AGENT_TOKEN` through your terminal or secret manager. Keep it out of chat, source control, and screenshots.
@@ -49,6 +64,7 @@ The server uses Streamable HTTP at `https://elitetravelsales.com/api/backend/mcp
 
 - **Cursor** — merge `cursor-mcp.example.json` into your client's MCP settings. Set `TRAVASO_AGENT_TOKEN` where Cursor runs, then reload the client.
 - **Codex** — add `codex-mcp.example.toml` to your MCP configuration. Set the same environment variable where Codex runs, then restart the client.
+- **VS Code / Copilot** — merge `copilot-mcp.example.json` into your personal `~/.copilot/mcp-config.json`, or into workspace-root `.mcp.json` for a shared server definition. Set `TRAVASO_AGENT_TOKEN` on the host where Copilot runs and select the Copilot harness. See the [current Copilot configuration reference](https://code.visualstudio.com/docs/agents/reference/mcp-configuration.md#configure-mcp-for-copilot). Its environment reference uses `${TRAVASO_AGENT_TOKEN}`; VS Code's older `${input:...}` password prompts are not supported by the native Copilot harness.
 - **Other clients** — use Streamable HTTP with the server URL and a bearer header from the client's secret settings. The [setup guide](https://elitetravelsales.com/tokens/setup) includes Claude Code and other examples.
 
 Check discovery from a terminal that already has `TRAVASO_AGENT_TOKEN` set.

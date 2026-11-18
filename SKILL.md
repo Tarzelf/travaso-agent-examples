@@ -7,6 +7,8 @@ description: Use connected Travaso MCP tools to search hotel rates, review a sel
 
 Use the configured remote MCP server at `https://elitetravelsales.com/api/backend/mcp`. Its bearer key belongs in the client or server secret environment as `TRAVASO_AGENT_TOKEN`.
 
+If the booking tools are unavailable, use the [client setup guide](https://elitetravelsales.com/tokens/setup). Reuse the operator's existing key, or direct them to [free key signup](https://elitetravelsales.com/tokens?utm_source=skills&utm_medium=integration&utm_campaign=skills-2026-11) when they need one. This skill supplies instructions; the runtime also needs the MCP connection. Resume hotel search after `search_competitive_hotel_quotes` is available. Never invent tool results.
+
 1. Collect the destination, check-in and check-out dates, and number of adults. Include room count and children's ages when relevant. Call `search_competitive_hotel_quotes` with these trip inputs and `paymentCollectionType: "FULL_PAYMENT"`.
 2. Show a few options with hotel, room, currency, full stay price, cancellation terms, and explicitly included perks. If a public comparison is present, check the same property, room, dates, occupancy, taxes, fees, cancellation terms, and benefits before claiming savings.
 3. After the traveler selects an option, collect the lead traveler's first name, last name, email and phone privately. For multiple rooms, include a lead for each room in `guests` and keep the primary traveler first.

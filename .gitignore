@@ -13,5 +13,12 @@ checkout-request.*.json
 __pycache__/
 *.pyc
 .cursor/mcp.json
+.cursor/skills/
+.claude/skills/
+.github/skills/
+.agents/
+.mcp.json
+.vscode/mcp.json
+skills-lock.json
 .codex/
 .DS_Store
