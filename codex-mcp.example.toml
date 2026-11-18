@@ -1,0 +1,3 @@
+[mcp_servers.travaso]
+url = "https://elitetravelsales.com/api/backend/mcp"
+bearer_token_env_var = "TRAVASO_AGENT_TOKEN"

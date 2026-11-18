@@ -1,0 +1,15 @@
+{
+  "location": "COPY_FROM_ORIGINAL_QUOTE",
+  "checkIn": "YYYY-MM-DD",
+  "checkOut": "YYYY-MM-DD",
+  "adults": 1,
+  "rooms": 1,
+  "childrenAges": [],
+  "maxResults": 3,
+  "paymentCollectionType": "FULL_PAYMENT",
+  "recommendationId": "COPY_FROM_SELECTED_RECOMMENDATION",
+  "firstName": "LEAD_FIRST_NAME",
+  "lastName": "LEAD_LAST_NAME",
+  "email": "traveler@example.com",
+  "phoneNumber": "+15555550100"
+}

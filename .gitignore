@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*credentials*
+*secrets*
+quote-result.json
+quote-request.json
+checkout-request.json
+checkout-request.*.json
+!checkout-request.example.json
+__pycache__/
+*.pyc
+.cursor/mcp.json
+.codex/
+.DS_Store
